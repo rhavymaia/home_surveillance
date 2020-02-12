@@ -217,7 +217,8 @@ class FaceRecogniser(object):
 
     def train(self,workDir,classifier,ldaDim):
         fname = "{}labels.csv".format(workDir) #labels of faces
-        logger.info("Loading labels " + fname + " csv size: " +  str(os.path.getsize("/root/home_surveillance/system/generated-embeddings/reps.csv")))
+        #TODO: Mudar o diretorio para treinamento das faces.
+        logger.info("Loading labels " + fname + " csv size: " +  str(os.path.getsize("/host/system/generated-embeddings/reps.csv")))
         if os.path.getsize(fname) > 0:
             logger.info(fname + " file is not empty")
             labels = pd.read_csv(fname, header=None).as_matrix()[:, 1]

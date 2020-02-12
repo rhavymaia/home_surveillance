@@ -58,6 +58,7 @@ def test():
 @app.route("/", methods = ['GET','POST'])
 def main():
     """Returns alarms current state"""
+    print("main - Returns alarms current state")
     global alarm_state
     global triggered
     if request.method == 'POST':
@@ -72,6 +73,7 @@ def main():
 @app.route("/change_state", methods = ['GET','POST'])
 def change_state():
     """Changes alarm's current state"""
+    print("change_state - Changes alarm's current state")
     global triggered
     global alarm_state
     if request.method == 'POST':
@@ -92,6 +94,7 @@ def change_state():
 @app.route("/trigger", methods = ['GET','POST'])
 def trigger():
     """Triggers the alarm"""
+    print("trigger - Triggers the alarm")
     global triggered
     if request.method == 'POST':
         password = request.form.get('password')
